@@ -76,9 +76,11 @@ video{
     align-items: center;
 }
 .abajo{
+    
     margin-bottom: 15px;
 }
 .page-linkx{
+    margin-top: 10px;
     color: green;
 }
 .page-linkx:hover{
