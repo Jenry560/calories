@@ -70,13 +70,15 @@ video{
 }
 
 .pagination{
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 .abajo{
     margin-bottom: 15px;
 }
 .page-linkx{
-    margin-top: 70px;
     color: green;
 }
 .page-linkx:hover{
@@ -127,10 +129,9 @@ video{
 }
 
 .fruit-title{
-    position: relative;
     text-align: center;
     align-self: center;
-    bottom: -45px;
+    margin-bottom: 10px;
 }
 .foot{
     background-color: green ;
