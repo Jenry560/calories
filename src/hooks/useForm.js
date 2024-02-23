@@ -8,6 +8,7 @@ export const useForm = (initialForm, validateForm) => {
   const [response, setResponse] = useState(null);
 
   const handleChange = (e) => {
+    e.preventDefault();
     const { name, value } = e.target;
 
     setForm({
@@ -17,15 +18,21 @@ export const useForm = (initialForm, validateForm) => {
   };
 
   const handleBlur = (e) => {
+    e.preventDefault();
     handleChange(e);
-    setErrors(validateForm(form));
+    const validationOne = {
+      valiName: e.target.name,
+      valiValue: e.target.value,
+    };
+    setErrors(validateForm(validationOne));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrors(validateForm(form));
+    let response = validateForm(form);
+    setErrors(response);
 
-    if (Object.keys(errors).length === 0) {
+    if (Object.keys(response).length === 0) {
       setLoading(true);
       helpHttp()
         .post("https://formsubmit.co/ajax/henryfuerte560@gmail.com", {

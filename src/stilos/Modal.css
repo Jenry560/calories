@@ -1,6 +1,6 @@
 .modal {
   position: fixed;
-  z-index: 100000000;
+  z-index: 100000;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,7 +12,8 @@
 }
 
 .modal-container {
-  z-index: 100000000;
+  border-radius: 15px;
+  z-index: 100000;
   position: relative;
   padding: 1.5rem;
   min-width: 320px;
@@ -21,17 +22,18 @@
   max-height: 600px;
   overflow-y: auto;
   background-color: #e5e5f7;
-  opacity: 0.9;
-  background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px),
+    radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
   background-size: 20px 20px;
-  background-position: 0 0,10px 10px;
-  
+  background-position: 0 0, 10px 10px;
+
+  animation: addVertical 0.5s forwards;
 }
 
 .modal-closex {
   position: absolute;
-  top: .1rem;
-  right: .1rem;
+  top: 0.1rem;
+  right: 0.1rem;
   font-size: 25px;
   cursor: pointer;
 }
@@ -39,10 +41,19 @@
 .modal.is-open {
   display: flex;
 }
-.mdmail{
+.mdmail {
   margin-bottom: 10px;
   width: 80%;
   font-size: 70px;
   cursor: pointer;
   border-bottom: 1px solid #fff;
+}
+@keyframes addVertical {
+  0% {
+    transform: translateY(-50vh) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
