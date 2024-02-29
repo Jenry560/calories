@@ -6,8 +6,9 @@
   width: 100%;
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.75);
-  display: none;
+  visibility: hidden;
   justify-content: center;
+  display: flex;
   align-items: center;
 }
 
@@ -26,10 +27,16 @@
     radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
-
-  animation: addVertical 0.5s forwards;
+  transform: translateY(-50vh) scale(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 400ms ease-in-out;
 }
-
+.modal-container.is-opened {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 .modal-closex {
   position: absolute;
   top: 0.1rem;
@@ -40,6 +47,7 @@
 
 .modal.is-open {
   display: flex;
+  visibility: visible;
 }
 .mdmail {
   margin-bottom: 10px;
@@ -47,13 +55,4 @@
   font-size: 70px;
   cursor: pointer;
   border-bottom: 1px solid #fff;
-}
-@keyframes addVertical {
-  0% {
-    transform: translateY(-50vh) scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }

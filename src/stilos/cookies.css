@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --padding-container: 100px 0;
+  --color-title: #001a49;
+}
+:root {
+  --padding-container: 100px 0;
+  --color-title: #001a49;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.hero__container {
+  max-width: 1000px;
+  height: min-content;
+  display: grid;
+  --padding-container: 0;
+  grid-auto-rows: max-content;
+  align-content: center;
+  gap: 1em;
+  padding-bottom: 10px;
+  text-align: center;
+
+  opacity: 0.8;
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+.cont {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: var(--padding-container);
+}
+.cont_cookies {
+  text-align: justify;
+  padding-top: 30px;
+  white-space: 10px;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+  text-wrap: wrap;
+}
+.cont_cookies h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.cont_cookies h3 {
+  color: green;
+  text-align: center;
+  padding: 5px 0;
+}
+.cont_cookies p {
+  color: black;
+}
+.cont_cookies a {
+  opacity: 1;
+  color: rgb(64, 61, 248);
+}
+@media (max-width: 800px) {
+  .cont_cookies h1 {
+    font-size: 30px;
+  }
+  .nav__menu {
+    display: block;
+  }
+  .nav__link--menu {
+    position: fixed;
+    background-color: rgb(105, 93, 6);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.7s opacity;
+  }
+  .nav__link--show {
+    --show: block;
+    opacity: 1;
+    pointer-events: unset;
+  }
+  .nav__close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+}

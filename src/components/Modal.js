@@ -6,7 +6,10 @@ const Modalx = ({ children, isOpen, closeModal }) => {
 
   return (
     <article className={`modal ${isOpen && "is-open"}`} onClick={closeModal}>
-      <div className="modal-container" onClick={handleModalContainerClick}>
+      <div
+        className={`modal-container ${isOpen && "is-opened"}`}
+        onClick={handleModalContainerClick}
+      >
         <IoMdCloseCircleOutline
           alt="cerrar"
           className="modal-closex"
