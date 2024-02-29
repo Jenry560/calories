@@ -5,15 +5,16 @@ import Footer from "./components/footer";
 
 import Portada from "./components/portada";
 import Que from "./components/que es";
-
-// function crearCookie() {
-//   ReactGa.initialize("G-MG2RZ57KQ6");
-// }
+import ReactGa from "react-ga4";
 
 function App() {
-  // const handleCookies = () => {
-  //   crearCookie();
-  // };
+  function crearCookie() {
+    ReactGa.initialize("G-MG2RZ57KQ6");
+    ReactGa.send({
+      hitType: "pageview",
+      page: "/my-path",
+    });
+  }
 
   return (
     <>
@@ -23,7 +24,7 @@ function App() {
         <FoodSearch />
       </div>
 
-      <Footer />
+      <Footer crearCookie={crearCookie} />
     </>
   );
 }

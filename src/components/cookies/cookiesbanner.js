@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../stilos/cookiesBanner.css";
 import imgCookies from "../../videod/imgCookie.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function CookiesBanner({ crearCookie }) {
-  const [cookies] = useState(true);
+  const [cookies, setCookies] = useState(true);
+
+  useEffect(() => {
+    if (localStorage.getItem("cookies_aceptadas_calories")) {
+      setCookies(false);
+      crearCookie();
+    }
+  }, [crearCookie]);
 
   const botonAceptar = (e) => {
-    // setCookies(false);
-    // localStorage.setItem("cookies_aceptadas_calories", true);
+    setCookies(false);
+    localStorage.setItem("cookies_aceptadas_calories", true);
     crearCookie();
   };
 
