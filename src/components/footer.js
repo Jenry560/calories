@@ -3,7 +3,7 @@ import "../stilos/style.css";
 import Modals from "./Modals";
 import CookiesBanner from "./cookies/cookiesbanner";
 
-const Footer = () => {
+const Footer = ({ crearCookie }) => {
   return (
     <>
       <footer className="foot" id="footer">
@@ -17,7 +17,7 @@ const Footer = () => {
           </Link>
         </h3>
       </footer>
-      <CookiesBanner />
+      <CookiesBanner crearCookie={crearCookie} />
     </>
   );
 };

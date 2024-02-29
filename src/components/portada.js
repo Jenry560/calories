@@ -1,13 +1,7 @@
 import videoN from "../videod/naturaleza.mp4";
 import "../stilos/style.css";
-import ReactGa from "react-ga";
-import { useEffect } from "react";
 
 const Portada = () => {
-  useEffect(() => {
-    ReactGa.pageview(window.location.pathname);
-  }, []);
-
   return (
     <div className="portada">
       <div className="overlay"></div>

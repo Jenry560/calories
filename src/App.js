@@ -5,11 +5,16 @@ import Footer from "./components/footer";
 
 import Portada from "./components/portada";
 import Que from "./components/que es";
-import ReactGa from "react-ga";
+import ReactGa from "react-ga4";
+
+// function crearCookie() {
+//   ReactGa.initialize("G-MG2RZ57KQ6");
+// }
 
 function App() {
-  const trakingId = "G-X0R31LHCMZ";
-  ReactGa.initialize(trakingId);
+  // const handleCookies = () => {
+  //   crearCookie();
+  // };
 
   return (
     <>

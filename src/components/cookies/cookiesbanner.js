@@ -4,12 +4,13 @@ import imgCookies from "../../videod/imgCookie.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function CookiesBanner() {
-  const [cookies, setCookies] = useState(false);
+function CookiesBanner({ crearCookie }) {
+  const [cookies, setCookies] = useState(true);
 
   const botonAceptar = (e) => {
-    setCookies(false);
-    localStorage.setItem("cookies_aceptadas_calories", true);
+    // setCookies(false);
+    // localStorage.setItem("cookies_aceptadas_calories", true);
+    crearCookie();
   };
 
   return (
