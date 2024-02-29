@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function CookiesBanner({ crearCookie }) {
-  const [cookies, setCookies] = useState(true);
+  const [cookies] = useState(true);
 
   const botonAceptar = (e) => {
     // setCookies(false);
