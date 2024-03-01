@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function CookiesBanner({ crearCookie }) {
-  const [cookies, setCookies] = useState(true);
+  const [cookies, setCookies] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("cookies_aceptadas_calories")) {
-      setCookies(false);
+    if (!localStorage.getItem("cookies_aceptadas_calories")) {
+      setCookies(true);
+    } else {
       crearCookie();
     }
   }, [crearCookie]);
