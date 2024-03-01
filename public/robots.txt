@@ -1,4 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-Agent: *
 Disallow:
-Sitemap: https://healthycalories.netlify.app//sitemap.xml
+Sitemap: https://healthycalories.netlify.app//sitemap_index.xml
